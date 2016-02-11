@@ -1,7 +1,7 @@
 <?php
 
 // Root URL of the website.
-$URL = "http://orga.cat/notes";
+$URL = "https://notes.hirozed.com";
 
 // Subfolder to output user content.
 $FOLDER = "_tmp";
