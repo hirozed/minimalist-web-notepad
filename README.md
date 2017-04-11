@@ -1,10 +1,33 @@
 Minimalist Web Notepad
 ======================
 
-This is a minimalist http://notepad.cc clone developed in PHP and
-jQuery.
+This is an open source clone of notepad.cc, which is now defunct.
 
-See http://orga.cat/notes to see it in action.
+For a demo, see https://orga.cat/notes or https://orga.cat/notes/whatever.
+
+
+Installation
+------------
+
+At the top of `index.php` file, change `$base_url` variable to point to your
+site.
+
+Make sure the web server is allowed to write to the `_tmp` directory.
+
+### On Apache
+
+You may need to enable mod_rewrite and set up `.htaccess` files in your site configuration.
+See [How To Set Up mod_rewrite for Apache](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04).
+
+### On Nginx
+
+To enable URL rewriting, put something like this in your configuration file:
+
+```
+location ~* ^/notes/(\w+)$ {
+    try_files $uri $uri/ /notes/index.php?f=$1;
+}
+```
 
 
 Copyright and license
